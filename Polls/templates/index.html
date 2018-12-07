@@ -1,0 +1,11 @@
+<h1> Welcome to my app </h1>
+
+{% if question %}
+{% for q in question %}
+    <ul>
+<li> <a href = {% url 'polls:detail' q.id %}>{{ q.question_text }}</a> </li>
+    </ul>
+{% endfor %}
+    {% else %}
+    <p> No polls are available</p>
+{% endif %}
