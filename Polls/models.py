@@ -16,6 +16,7 @@ class Question(models.Model):
     was_published_recently.short_description = 'Published recently?'
 
     list_filter = ['pub_date']
+
     def __str__(self):
         return self.question_text
 

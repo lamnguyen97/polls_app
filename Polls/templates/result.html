@@ -1,7 +1,12 @@
-<h1>Result</h1>
-
+{% load static %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'polls/style.css' %}" >
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<div class = "page">
+<h1 class = "title">Result</h1>
+<div class = "content">
 {% for choice in question.choice_set.all %}
-   <p> {{ choice.choice_text }} -- {{ choice.vote }} </p>
+   <p class ="result_item"> {{ choice.choice_text }} -- {{ choice.vote }} <i class = "fa fa-thumbs-up"></i> </p>
 {% endfor %}
-
-<a href = "{% url "polls:detail" question.id%}"> Vote Again</a>
+</div>
+<a class = "vote_again" href = "{% url "polls:detail" question.id%}" ><i class = "fa fa-hand-point-left"></i> Vote Again ?</a>
+</div>

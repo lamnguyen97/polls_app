@@ -1,14 +1,18 @@
 {% load static %}
 <link rel = "stylesheet" type = "text/css" href = "{% static 'polls/style.css' %}" >
-
-<h1> Welcome to my app </h1>
-
-{% if question_list %}
-{% for question in question_list %}
-    <ul>
-<li> <a href = {% url 'polls:detail' question.id %}>{{ question.question_text }}</a> </li>
-    </ul>
-{% endfor %}
-    {% else %}
-    <p> No polls are available</p>
-{% endif %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<div class = "page">
+    <h1 class = "Title"> Poll App ! </h1>
+    <h3 class = "List"> List Question </h3>
+    <div class = "Content">
+    {% if question_list %}
+    {% for question in question_list %}
+        <ul>
+    <li class = "question_item"><i class="fa fa-question"></i> <a href = {% url 'polls:detail' question.id %}>{{ question.question_text }}</a> </li>
+        </ul>
+    {% endfor %}
+        {% else %}
+        <p> No polls are available</p>
+    {% endif %}
+    </div>
+</div>

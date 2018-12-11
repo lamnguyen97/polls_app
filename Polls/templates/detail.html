@@ -1,4 +1,9 @@
-<h1>Here are votes for {{ question.question_text }}</h1>
+{% load static %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'polls/style.css' %}" >
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<div class = "page">
+<h1 class = "title">{{ question.question_text }}</h1>
+<div class = "content">
 {% if error_message %}
     <p><strong>{{ error_message }}</strong></p>
 {% endif %}
@@ -6,7 +11,10 @@
     {% csrf_token %}
     {% for choice in question.choice_set.all %}
         <input type = "radio"  name = "choice" value = {{ choice.id }}>
-        <label>{{ choice.choice_text}}</label> <br/>
+        <label class = "choice_item">{{ choice.choice_text}}</label> <br/>
     {% endfor %}
-    <input type = "submit" name = "submit" value = "Vote">
+    <input class = "vote" type = "submit" name = "submit" value = "Vote">
+
 </form>
+</div>
+</div>

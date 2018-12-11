@@ -1,7 +1,76 @@
+@font-face {
+    font-family: "titleFont";
+    src:url("./fonts/Another_Flight.otf");
+}
+@font-face{
+    font-family: "list";
+    src: url("./fonts/Melon_hunter.ttf");
+}
+@font-face{
+    font-family: "item";
+    src: url("./fonts/CaviarDreams.ttf");
+}
+* {
+    box-sizing: border-box;
+}
 body{
-    background: white url("pictures/picture.jpg") no-repeat;
+    background:  #344560 no-repeat;
+}
+li{
+    list-style: none;
+}
+form{
+    margin: 10px 10px;
+}
+i{
+    color: white;
+    font-size: 16px;
+}
+.page{
+    margin: 250px auto;
+    text-align: center;
+    width: 500px;
+    height: 400px;
+}
+.list{
+    margin: 0 auto;
+    font-family: "list" ;
+    font-size: 45px;
+    color: white;
+    width: 200px;
+
 }
 
-li a {
-    color: green;
+.title{
+    font-family: "titleFont";
+    font-size: 60px;
+    color: #fff;
+    font-weight: 900;
+}
+
+.content{
+    text-align: left;
+    margin: 20px auto;
+    border: 1px white solid;
+    width: 300px;
+}
+.question_item a, .choice_item, .result_item{
+    text-decoration: none;
+    color: white;
+    font-family: "item";
+    padding: 5px;
+
+
+}
+.question_item i{
+    color: white;
+}
+.vote_again{
+    text-decoration: None;
+    color: white;
+    font-size: 30px;
+    font-family:"item";
+}
+.vote-again:hover{
+    color: orange;
 }
